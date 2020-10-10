@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Room Id: <%= id %></title>
+        <link rel="stylesheet" href="./room.css">
+        <script>
+            const ROOM_ID = "<%= id %>";
+        </script>
+        <script defer src="./peerjs.min.js"></script>
+        <script defer src="./socket.io/socket.io.js"></script>
+        <script defer src="./v4.js"></script>
+        <!-- <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> -->
+    </head>
+    <body>
+        <div class="wrap">
+            <!-- for video  -->
+            <div class="left">
+                <div class="gallery">
+                </div>
+
+            </div>
+            <!-- for chat -->
+            <div class="right">
+
+            </div>
+        </div>
+        <!-- for mic and video buttons -->
+        <div class="bottom">
+
+        </div>
+        <script defer src="./room.js"></script>
+        <script defer src="./grid.js"></script>
+    </body>
+</html>
