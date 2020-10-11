@@ -108,7 +108,7 @@ socket.on("offer", (sender_id, description) => {
         })
     watches[sender_id].ontrack = (event) => {
         addVideo(video, event.streams[0], sender_id)
-        video.muted = true
+        // video.muted = true
         recalculateLayout()
     }
     watches[sender_id].onicecandidate = (event) => {
@@ -131,7 +131,7 @@ socket.on("candidateToWatcher", (sender_id, candidate) => {
 socket.on("user-disconnected", (id) => {
     let _id = ""
     for (let i = 0; i < id.length; i++) {
-        _id += id[i] != "-" & isNaN(parseInt(id[i])) ? id[i] : ""
+        _id += (id[i] != "-") & isNaN(parseInt(id[i])) ? id[i] : ""
     }
     let container = document.querySelector(`#${_id}`)
     container.remove()
@@ -140,7 +140,7 @@ socket.on("user-disconnected", (id) => {
 function addVideo(video, stream, id) {
     let _id = ""
     for (let i = 0; i < id.length; i++) {
-        _id += id[i] != "-" & isNaN(parseInt(id[i])) ? id[i] : ""
+        _id += (id[i] != "-") & isNaN(parseInt(id[i])) ? id[i] : ""
     }
     let left = document.querySelector(".gallery")
     let container = document.createElement("div")
