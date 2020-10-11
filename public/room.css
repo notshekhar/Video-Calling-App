@@ -26,8 +26,10 @@
     width: var(--width);
     height: var(--height);
     transition: all 400ms;
+    border-radius: 21px;
+    overflow: hidden;
 }
-.left video {
+.video_container video {
     height: 100%;
     width: 100%;
     transform: rotateY(180deg);

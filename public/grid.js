@@ -1,3 +1,21 @@
+let bottom = document.querySelector(".bottom")
+
+window.onmousemove = (e) => {
+    let y = e.clientY
+    let height = window.innerHeight
+    if (y >= height - 200) {
+        bottom.classList.remove("hide_bottom")
+        bottom.classList.add("show_bottom")
+        setTimeout(() => {
+            bottom.classList.add("hide_bottom")
+            bottom.classList.remove("show_bottom")
+        }, 5000)
+    } else {
+        bottom.classList.add("hide_bottom")
+        bottom.classList.remove("show_bottom")
+    }
+}
+
 function recalculateLayout() {
     const gallery = document.querySelector(".gallery")
     const aspectRatio = 16 / 9
@@ -57,5 +75,12 @@ function recalculateLayout() {
     gallery.style.setProperty("--width", width + "px")
     gallery.style.setProperty("--height", height + "px")
     gallery.style.setProperty("--cols", cols + "")
+
+    let vide_cont = document.querySelectorAll(".video_container")
+    for (let i = 0; i < vide_cont.length; i++) {
+        if(!vide_cont[i].querySelector("video")){
+            vide_cont[i].remove()
+        }
+    }
 }
 window.onresize = () => recalculateLayout()
