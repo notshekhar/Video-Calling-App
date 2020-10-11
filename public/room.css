@@ -11,7 +11,9 @@
     display: flex;
 }
 .left {
-    width: calc(100% - 300px);
+    /* display: none; */
+    /* width: calc(100% - 300px); */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +38,7 @@
     transition: all 400ms;
 }
 .right {
+    display: none;
     background-color: green;
     width: 300px;
 }
